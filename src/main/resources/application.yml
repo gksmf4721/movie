@@ -1,0 +1,58 @@
+application:
+  name: movie
+
+server:
+  port: 8080
+  cookie: localhost   # 프로필에 따른 구분 필요. 임시 로컬.
+
+springfox:
+  documentation:
+    swagger-ui:
+      path: /swagger-ui.html
+      disable-swagger-default-url: true
+      display-query-params-without-oauth2: true
+
+mybatis:
+  mapper-locations:
+    - classpath:database/mapper/mysql/**/**/*.xml
+    - classpath:schedule/mapper/mysql/**/**/*.xml
+  configuration:
+    return-instance-for-empty-row: true
+    map-underscore-to-camel-case: true
+
+swagger:
+  base-url:
+  group-name: Version 1.0
+  title: Plume-Backend
+  ver: 0.1
+  base-package: com.plume.backend.api
+  description: Plume-Backend API
+
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/plume
+    username: root
+    password: n7532056@
+    hikari:
+      maximum-pool-size: 5
+      idle-timeout: 30000
+  jpa:
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB106Dialect
+        format_sql: true
+
+jwt:
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHkta3w2cvXJlZGlzLXRoZXB7tvVyY81JDjcLXNwquiuZy1ib290LXNlY3VyaXR5LWp3dC1yZWRpcy10aGVwb3dlcmJyYWlucw1a
+
+allowed:
+  origin:
+    url: http://localhost:3000,http://localhost:8080
+

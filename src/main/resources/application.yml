@@ -31,7 +31,7 @@ swagger:
 spring:
   datasource:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/plume
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/movie
     username: root
     password: n7532056@
     hikari:
@@ -51,8 +51,4 @@ spring:
 
 jwt:
   secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHkta3w2cvXJlZGlzLXRoZXB7tvVyY81JDjcLXNwquiuZy1ib290LXNlY3VyaXR5LWp3dC1yZWRpcy10aGVwb3dlcmJyYWlucw1a
-
-allowed:
-  origin:
-    url: http://localhost:3000,http://localhost:8080
 

@@ -1,8 +1,10 @@
 package com.example.movie.backend.api.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -22,9 +24,28 @@ public class MovieEntity {
     @Column(name = "MOVIE_ID")
     private Long movieId;
 
+    @Column(name = "ORIGINAL_TITLE")
+    private String originalTitle;
+
+    @Column(name = "STATUS")
+    private String status;
+
+    @Column(name = "ORIGINAL_LANGUAGE")
+    private String originalLanguage;
+
+    @Column(name = "BUDGET")
+    private BigDecimal budget;
+
+    @Column(name = "REVENUE")
+    private BigDecimal revenue;
+
+    @Column(name = "KEYWORDS")
+    private String keywords;
+
     @Column(name = "TITLE", nullable = false)
     private String title;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul", pattern = "yyyy-MM-dd")
     @Column(name = "RELEASE_DATE", nullable = false)
     private LocalDate releaseDate;
 

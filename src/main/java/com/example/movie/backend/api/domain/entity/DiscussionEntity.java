@@ -17,9 +17,6 @@ public class DiscussionEntity {
     @Column(name = "DISCUSSION_ID")
     private Long discussionId;
 
-//    @Column(name = "MOVIE_ID", nullable = false)
-//    private Long movieId;
-
     @Column(name = "DISCUSSION_TEXT", nullable = false, columnDefinition = "TEXT")
     private String discussionText;
 

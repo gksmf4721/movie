@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -129,7 +130,33 @@ public class MovieDTO {
         }
     }
 
+    @Getter
+    @Builder
+    public static class RecommendResponse {
+        private String title;
+        private String imageUrl;
+        private double matchPercentage;
 
+        public static RecommendResponse of(MovieEntity movie, double matchPercentage) {
+            return RecommendResponse.builder()
+                    .title(movie.getTitle()) // 또는 적절한 getter 사용
+                    .imageUrl(movie.getImageUrl())
+                    .matchPercentage(matchPercentage)
+                    .build();
+        }
+    }
+
+    @Getter
+    @Builder
+    public static class RecommendListResponse {
+        private List<RecommendResponse> items;
+
+        public static RecommendListResponse of(List<RecommendResponse> items) {
+            return RecommendListResponse.builder()
+                    .items(items)
+                    .build();
+        }
+    }
 
 
 }

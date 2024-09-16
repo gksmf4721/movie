@@ -17,9 +17,6 @@ public class ReviewEntity {
     @Column(name = "REVIEW_ID")
     private Long reviewId;
 
-//    @Column(name = "MOVIE_ID", nullable = false)
-//    private Long movieId;
-
     @Column(name = "REVIEW_TEXT", nullable = false, columnDefinition = "TEXT")
     private String reviewText;
 

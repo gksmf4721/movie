@@ -8,7 +8,7 @@ server:
 springfox:
   documentation:
     swagger-ui:
-      path: /swagger-ui.html
+      path: /swagger-ui/index.html  # Swagger 3.0 이상부터는 이와 같이 url 표기
       disable-swagger-default-url: true
       display-query-params-without-oauth2: true
 
@@ -23,10 +23,10 @@ mybatis:
 swagger:
   base-url:
   group-name: Version 1.0
-  title: Plume-Backend
+  title: Movie
   ver: 0.1
-  base-package: com.plume.backend.api
-  description: Plume-Backend API
+  base-package: com.example.movie.backend.api
+  description: Movie API
 
 spring:
   datasource:
@@ -48,7 +48,3 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MariaDB106Dialect
         format_sql: true
-
-jwt:
-  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHkta3w2cvXJlZGlzLXRoZXB7tvVyY81JDjcLXNwquiuZy1ib290LXNlY3VyaXR5LWp3dC1yZWRpcy10aGVwb3dlcmJyYWlucw1a
-
